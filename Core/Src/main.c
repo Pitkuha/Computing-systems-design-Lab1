@@ -32,25 +32,20 @@ streetLight(){
 	reset();
 	switch(state){
 	case 0:
-			if (time <= RED_TIME) red();
+			if (time <= RED_TIME) { red(); break; }
 			else state = 1, time = 0;
-			break;
 	case 1:
-			if (time <= YELLOW_TIME) yellow();
+			if (time <= YELLOW_TIME) { yellow(); break; }
 			else state = 2, time = 0;
-			break;
 	case 2:
-			if (time <= GREEN_TIME) green();
+			if (time <= GREEN_TIME) { green(); break; }
 			else state = 3, time = 0;
-			break;
 	case 3:
-			if (time <= FLASHING_GREEN_TIME) flashingGreen();
+			if (time <= FLASHING_GREEN_TIME) { flashingGreen(); break; }
 			else state = 4, time = 0;
-			break;
 	case 4:
-			if (time <= YELLOW_TIME) yellow();
+			if (time <= YELLOW_TIME) { yellow(); break; }
 			else state = 0, time = 0;
-			break;
 	}
 	HAL_Delay(1000);
 }
